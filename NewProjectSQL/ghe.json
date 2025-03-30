@@ -1,0 +1,32 @@
+[
+  {
+    "ma_ghe": 1,
+    "loai_ghe": "Thường",
+    "ma_rap": 1
+  },
+  {
+    "ma_ghe": 2,
+    "loai_ghe": "VIP",
+    "ma_rap": 2
+  },
+  {
+    "ma_ghe": 3,
+    "loai_ghe": "Thường",
+    "ma_rap": 1
+  },
+  {
+    "ma_ghe": 4,
+    "loai_ghe": "VIP",
+    "ma_rap": 1
+  },
+  {
+    "ma_ghe": 5,
+    "loai_ghe": "Thường",
+    "ma_rap": 2
+  },
+  {
+    "ma_ghe": 6,
+    "loai_ghe": "VIP",
+    "ma_rap": 2
+  }
+]

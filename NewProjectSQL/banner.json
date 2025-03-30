@@ -1,0 +1,12 @@
+[
+  {
+    "ma_banner": 1,
+    "ma_phim": 1,
+    "hinh_anh": "banner1.jpg"
+  },
+  {
+    "ma_banner": 2,
+    "ma_phim": 2,
+    "hinh_anh": "banner2.jpg"
+  }
+]

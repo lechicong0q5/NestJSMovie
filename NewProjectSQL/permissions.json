@@ -1,0 +1,34 @@
+[
+  {
+    "permission_id": 1,
+    "endpoint": "/users",
+    "method": "GET",
+    "module": "User Management",
+    "created_at": "2025-03-14 12:07:39",
+    "updated_at": "2025-03-14 12:07:39"
+  },
+  {
+    "permission_id": 2,
+    "endpoint": "/users",
+    "method": "POST",
+    "module": "User Management",
+    "created_at": "2025-03-14 12:07:39",
+    "updated_at": "2025-03-14 12:07:39"
+  },
+  {
+    "permission_id": 3,
+    "endpoint": "/movies",
+    "method": "GET",
+    "module": "Movie Management",
+    "created_at": "2025-03-14 12:07:39",
+    "updated_at": "2025-03-14 12:07:39"
+  },
+  {
+    "permission_id": 4,
+    "endpoint": "/movies",
+    "method": "POST",
+    "module": "Movie Management",
+    "created_at": "2025-03-14 12:07:39",
+    "updated_at": "2025-03-14 12:07:39"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "ma_phim": 1,
+    "ten_phim": "Avengers: Endgame",
+    "trailer": "trailer_url_1",
+    "hinh_anh": "http://localhost:3000/uploads/undefined",
+    "mo_ta": "Mô tả phim Avengers",
+    "ngay_khoi_chieu": "2023-05-01",
+    "danh_gia": 9,
+    "hot": 1,
+    "dang_chieu": 1,
+    "sap_chieu": 0
+  },
+  {
+    "ma_phim": 2,
+    "ten_phim": "The Batman",
+    "trailer": "trailer_url_2",
+    "hinh_anh": "image_url_2",
+    "mo_ta": "Mô tả phim Batman",
+    "ngay_khoi_chieu": "2023-06-10",
+    "danh_gia": 8,
+    "hot": 0,
+    "dang_chieu": 1,
+    "sap_chieu": 0
+  },
+  {
+    "ma_phim": 3,
+    "ten_phim": "Avengers: Endgame",
+    "trailer": "https://youtube.com/trailer1",
+    "hinh_anh": "endgame.jpg",
+    "mo_ta": "Bom tấn siêu anh hùng",
+    "ngay_khoi_chieu": "2025-05-01",
+    "danh_gia": 9,
+    "hot": 0,
+    "dang_chieu": 0,
+    "sap_chieu": 0
+  },
+  {
+    "ma_phim": 4,
+    "ten_phim": "Inception",
+    "trailer": "https://youtube.com/trailer2",
+    "hinh_anh": "inception.jpg",
+    "mo_ta": "Bộ phim hack não",
+    "ngay_khoi_chieu": "2025-06-15",
+    "danh_gia": 8,
+    "hot": 0,
+    "dang_chieu": 0,
+    "sap_chieu": 0
+  }
+]

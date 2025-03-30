@@ -1,0 +1,22 @@
+[
+  {
+    "ma_he_thong_rap": 1,
+    "ten_he_thong_rap": "CGV Cinemas",
+    "logo": "cgv_logo.png"
+  },
+  {
+    "ma_he_thong_rap": 2,
+    "ten_he_thong_rap": "Lotte Cinema",
+    "logo": "lotte_logo.png"
+  },
+  {
+    "ma_he_thong_rap": 3,
+    "ten_he_thong_rap": "CGV",
+    "logo": "cgv_logo.jpg"
+  },
+  {
+    "ma_he_thong_rap": 4,
+    "ten_he_thong_rap": "Lotte Cinema",
+    "logo": "lotte_logo.jpg"
+  }
+]

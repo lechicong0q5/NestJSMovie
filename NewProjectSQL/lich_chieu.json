@@ -1,0 +1,30 @@
+[
+  {
+    "ma_lich_chieu": 1,
+    "ma_rap": 1,
+    "ma_phim": 1,
+    "ngay_gio_chieu": "2023-07-01 18:00:00",
+    "gia_ve": 100000
+  },
+  {
+    "ma_lich_chieu": 2,
+    "ma_rap": 2,
+    "ma_phim": 2,
+    "ngay_gio_chieu": "2023-07-02 20:00:00",
+    "gia_ve": 120000
+  },
+  {
+    "ma_lich_chieu": 3,
+    "ma_rap": 1,
+    "ma_phim": 1,
+    "ngay_gio_chieu": "2025-05-02 19:00:00",
+    "gia_ve": 100000
+  },
+  {
+    "ma_lich_chieu": 4,
+    "ma_rap": 2,
+    "ma_phim": 2,
+    "ngay_gio_chieu": "2025-06-16 20:00:00",
+    "gia_ve": 120000
+  }
+]

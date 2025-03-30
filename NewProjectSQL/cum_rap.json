@@ -1,0 +1,26 @@
+[
+  {
+    "ma_cum_rap": 1,
+    "ten_cum_rap": "CGV Aeon Mall",
+    "dia_chi": "123 Đường ABC, TP.HCM",
+    "ma_he_thong_rap": 1
+  },
+  {
+    "ma_cum_rap": 2,
+    "ten_cum_rap": "Lotte Landmark",
+    "dia_chi": "456 Đường XYZ, Hà Nội",
+    "ma_he_thong_rap": 2
+  },
+  {
+    "ma_cum_rap": 3,
+    "ten_cum_rap": "CGV Aeon Mall",
+    "dia_chi": "Hà Nội",
+    "ma_he_thong_rap": 1
+  },
+  {
+    "ma_cum_rap": 4,
+    "ten_cum_rap": "Lotte Nowzone",
+    "dia_chi": "Hồ Chí Minh",
+    "ma_he_thong_rap": 2
+  }
+]

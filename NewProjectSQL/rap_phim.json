@@ -1,0 +1,22 @@
+[
+  {
+    "ma_rap": 1,
+    "ten_rap": "Rạp 1",
+    "ma_cum_rap": 1
+  },
+  {
+    "ma_rap": 2,
+    "ten_rap": "Rạp 2",
+    "ma_cum_rap": 2
+  },
+  {
+    "ma_rap": 3,
+    "ten_rap": "Rạp 1",
+    "ma_cum_rap": 1
+  },
+  {
+    "ma_rap": 4,
+    "ten_rap": "Rạp 2",
+    "ma_cum_rap": 2
+  }
+]
