@@ -19,6 +19,7 @@ export class DatVeController {
   }
 
   @Get(`LayDanhSachPhongVe`)
+  @ApiBearerAuth()
   async getListDatVe(
     @Query()
     query: any,
