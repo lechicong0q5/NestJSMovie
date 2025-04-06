@@ -12,6 +12,8 @@ import { CheckPermissionStrategy } from './modules/auth/permission/permission-st
 import { NguoiDungModule } from './modules/nguoi-dung/nguoi-dung.module';
 import { QuanLyPhimModule } from './modules/quan-ly-phim/quan-ly-phim.module';
 import { QuanLyRapModule } from './modules/quan-ly-rap/quan-ly-rap.module';
+import { ApiHeaderTokenStrategy } from './modules/auth/test/api-header-token.strategy';
+
 
 @Module({
   imports: [
@@ -29,6 +31,6 @@ import { QuanLyRapModule } from './modules/quan-ly-rap/quan-ly-rap.module';
     QuanLyRapModule,
   ],
   controllers: [AppController],
-  providers: [AppService, CheckTokenStrategy, CheckPermissionStrategy],
+  providers: [AppService, CheckTokenStrategy, CheckPermissionStrategy, ApiHeaderTokenStrategy],
 })
 export class AppModule {}

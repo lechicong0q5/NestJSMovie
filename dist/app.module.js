@@ -21,6 +21,7 @@ const permission_strategy_1 = require("./modules/auth/permission/permission-stra
 const nguoi_dung_module_1 = require("./modules/nguoi-dung/nguoi-dung.module");
 const quan_ly_phim_module_1 = require("./modules/quan-ly-phim/quan-ly-phim.module");
 const quan_ly_rap_module_1 = require("./modules/quan-ly-rap/quan-ly-rap.module");
+const api_header_token_strategy_1 = require("./modules/auth/test/api-header-token.strategy");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -39,7 +40,7 @@ exports.AppModule = AppModule = __decorate([
             quan_ly_rap_module_1.QuanLyRapModule,
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, token_strategy_1.CheckTokenStrategy, permission_strategy_1.CheckPermissionStrategy],
+        providers: [app_service_1.AppService, token_strategy_1.CheckTokenStrategy, permission_strategy_1.CheckPermissionStrategy, api_header_token_strategy_1.ApiHeaderTokenStrategy],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

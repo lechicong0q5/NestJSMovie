@@ -18,27 +18,23 @@ const nguoi_dung_service_1 = require("./nguoi-dung.service");
 const create_nguoi_dung_dto_1 = require("./dto/create-nguoi-dung.dto");
 const update_nguoi_dung_dto_1 = require("./dto/update-nguoi-dung.dto");
 const swagger_1 = require("@nestjs/swagger");
-const skip_permission_decorator_1 = require("../../common/decorators/skip-permission.decorator");
+const api_header_token_guard_1 = require("../auth/test/api-header-token.guard");
 let NguoiDungController = class NguoiDungController {
     constructor(nguoiDungService) {
         this.nguoiDungService = nguoiDungService;
     }
     async getListTypeUser(query, req) {
-        const result = await this.nguoiDungService.getListTypeUser(req, query);
-        return result;
+        return await this.nguoiDungService.getListTypeUser(req, query);
     }
     async getListUser(query, req) {
-        const result = await this.nguoiDungService.getListUser(req, query);
-        return result;
+        return await this.nguoiDungService.getListUser(req, query);
     }
     async getListVideo(query, page, pageSize, req) {
-        const result = await this.nguoiDungService.getUserPage(req, query);
-        return result;
+        return await this.nguoiDungService.getUserPage(req, query);
     }
-    async FindUserDetail(param, id, headers, req) {
+    async FindUserDetail(id, headers, req) {
         console.log({ headers });
-        const result = await this.nguoiDungService.FindUserDetail(id, req);
-        return result;
+        return await this.nguoiDungService.FindUserDetail(id, req);
     }
     async FindUserDetailPage(query, id, req) {
         console.log({ headers: req.headers });
@@ -51,14 +47,18 @@ let NguoiDungController = class NguoiDungController {
         return await this.nguoiDungService.updateUser(updateNguoiDungDto, req);
     }
     async deleteUser(id, req) {
-        const result = await this.nguoiDungService.deleteUser(Number(id));
-        return result;
+        return await this.nguoiDungService.deleteUser(Number(id));
     }
 };
 exports.NguoiDungController = NguoiDungController;
 __decorate([
-    (0, common_1.Get)(`LayDanhSachLoaiNguoiDung`),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.Get)('LayDanhSachLoaiNguoiDung'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Query)()),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -66,7 +66,13 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "getListTypeUser", null);
 __decorate([
-    (0, common_1.Get)(`LayDanhSachNguoiDung`),
+    (0, common_1.Get)('LayDanhSachNguoiDung'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Query)()),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -74,32 +80,44 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "getListUser", null);
 __decorate([
-    (0, common_1.Get)(`LayDanhSachLoaiNguoiDungPhanTrang`),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.Get)('LayDanhSachLoaiNguoiDungPhanTrang'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Query)()),
-    __param(1, (0, common_1.Query)(`page`)),
-    __param(2, (0, common_1.Query)(`pageSize`)),
+    __param(1, (0, common_1.Query)('page')),
+    __param(2, (0, common_1.Query)('pageSize')),
     __param(3, (0, common_1.Req)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String, String, Request]),
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "getListVideo", null);
 __decorate([
-    (0, common_1.Get)(`TimKiemNguoiDung/:id`),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, skip_permission_decorator_1.SkipPermission)(),
-    __param(0, (0, common_1.Param)()),
-    __param(1, (0, common_1.Param)(`id`)),
-    __param(2, (0, common_1.Headers)()),
-    __param(3, (0, common_1.Req)()),
+    (0, common_1.Get)('TimKiemNguoiDung/:id'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Headers)()),
+    __param(2, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, String, Object, Request]),
+    __metadata("design:paramtypes", [String, Object, Request]),
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "FindUserDetail", null);
 __decorate([
-    (0, common_1.Get)(`TimKiemNguoiDungPhanTrang`),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, skip_permission_decorator_1.SkipPermission)(),
+    (0, common_1.Get)('TimKiemNguoiDungPhanTrang'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Query)()),
     __param(1, (0, common_1.Query)('id')),
     __param(2, (0, common_1.Req)()),
@@ -108,31 +126,41 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "FindUserDetailPage", null);
 __decorate([
-    (0, common_1.Post)(`TaoNguoiDung`),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, skip_permission_decorator_1.SkipPermission)(),
+    (0, common_1.Post)('TaoNguoiDung'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_nguoi_dung_dto_1.CreateNguoiDungDto,
-        Request]),
+    __metadata("design:paramtypes", [create_nguoi_dung_dto_1.CreateNguoiDungDto, Request]),
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "createUser", null);
 __decorate([
-    (0, common_1.Put)(`CapNhatThongTinNguoiDung`),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, skip_permission_decorator_1.SkipPermission)(),
+    (0, common_1.Put)('CapNhatThongTinNguoiDung'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [update_nguoi_dung_dto_1.UpdateNguoiDungDto,
-        Request]),
+    __metadata("design:paramtypes", [update_nguoi_dung_dto_1.UpdateNguoiDungDto, Request]),
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "updateUser", null);
 __decorate([
     (0, common_1.Delete)('XoaNguoiDung/:id'),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, skip_permission_decorator_1.SkipPermission)(),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -140,7 +168,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "deleteUser", null);
 exports.NguoiDungController = NguoiDungController = __decorate([
-    (0, skip_permission_decorator_1.SkipPermission)(),
+    (0, swagger_1.ApiTags)('QuanLyNguoiDung'),
     (0, common_1.Controller)('QuanLyNguoiDung'),
     __metadata("design:paramtypes", [nguoi_dung_service_1.NguoiDungService])
 ], NguoiDungController);

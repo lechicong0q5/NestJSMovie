@@ -10,8 +10,8 @@ export declare class NguoiDungService {
             created_at: Date | null;
             updated_at: Date | null;
             name: string;
-            is_active: boolean | null;
             description: string | null;
+            is_active: boolean | null;
         }[];
     }>;
     getListUser(req: any, query: any): Promise<{

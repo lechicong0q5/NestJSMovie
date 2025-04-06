@@ -18,7 +18,7 @@ const dat_ve_service_1 = require("./dat-ve.service");
 const create_dat_ve_dto_1 = require("./dto/create-dat-ve.dto");
 const create_lich_chieu_dto_1 = require("./dto/create-lich-chieu.dto");
 const swagger_1 = require("@nestjs/swagger");
-const skip_permission_decorator_1 = require("../../common/decorators/skip-permission.decorator");
+const api_header_token_guard_1 = require("../auth/test/api-header-token.guard");
 let DatVeController = class DatVeController {
     constructor(datVeService) {
         this.datVeService = datVeService;
@@ -27,8 +27,7 @@ let DatVeController = class DatVeController {
         return await this.datVeService.create(createDatVeDto);
     }
     async getListDatVe(query, req) {
-        const result = await this.datVeService.getListDatVe(req, query);
-        return result;
+        return await this.datVeService.getListDatVe(req, query);
     }
     async createLichChieu(createLichChieuDto) {
         return await this.datVeService.createLichChieu(createLichChieuDto);
@@ -36,15 +35,26 @@ let DatVeController = class DatVeController {
 };
 exports.DatVeController = DatVeController;
 __decorate([
-    (0, common_1.Post)(`Datve`),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.Post)('Datve'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_dat_ve_dto_1.CreateDatVeDto]),
     __metadata("design:returntype", Promise)
 ], DatVeController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(`LayDanhSachPhongVe`),
+    (0, common_1.Get)('LayDanhSachPhongVe'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Query)()),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -52,15 +62,20 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], DatVeController.prototype, "getListDatVe", null);
 __decorate([
-    (0, common_1.Post)(`TaoLichChieu`),
+    (0, common_1.Post)('TaoLichChieu'),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_lich_chieu_dto_1.CreateLichChieuDto]),
     __metadata("design:returntype", Promise)
 ], DatVeController.prototype, "createLichChieu", null);
 exports.DatVeController = DatVeController = __decorate([
-    (0, skip_permission_decorator_1.SkipPermission)(),
-    (0, swagger_1.ApiTags)("QuanLyDatVe"),
+    (0, swagger_1.ApiTags)('QuanLyDatVe'),
     (0, common_1.Controller)('QuanLyDatVe'),
     __metadata("design:paramtypes", [dat_ve_service_1.DatVeService])
 ], DatVeController);

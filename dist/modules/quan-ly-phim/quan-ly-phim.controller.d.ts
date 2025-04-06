@@ -1,5 +1,6 @@
 import { QuanLyPhimService } from './quan-ly-phim.service';
 import { CreatePhimDto } from './dto/create-phim.dto';
+import { Request } from 'express';
 export declare class QuanLyPhimController {
     private readonly quanLyPhimService;
     constructor(quanLyPhimService: QuanLyPhimService);
@@ -58,7 +59,7 @@ export declare class QuanLyPhimController {
             sap_chieu: boolean | null;
         }[];
     }>;
-    avatarLocal(file: any): Promise<string>;
+    avatarLocal(file: Express.Multer.File): Promise<string>;
     capNhatPhimUpload(ma_phim: number, file: Express.Multer.File): Promise<{
         message: string;
         data: {

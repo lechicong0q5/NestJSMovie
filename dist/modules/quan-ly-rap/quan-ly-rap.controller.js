@@ -16,6 +16,7 @@ exports.QuanLyRapController = void 0;
 const common_1 = require("@nestjs/common");
 const quan_ly_rap_service_1 = require("./quan-ly-rap.service");
 const swagger_1 = require("@nestjs/swagger");
+const api_header_token_guard_1 = require("../auth/test/api-header-token.guard");
 let QuanLyRapController = class QuanLyRapController {
     constructor(quanLyRapService) {
         this.quanLyRapService = quanLyRapService;
@@ -36,7 +37,12 @@ let QuanLyRapController = class QuanLyRapController {
 exports.QuanLyRapController = QuanLyRapController;
 __decorate([
     (0, common_1.Get)('LayThongTinHeThong/:ma_he_thong_rap'),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     (0, swagger_1.ApiParam)({ name: 'ma_he_thong_rap', description: 'Mã hệ thống rạp', type: Number }),
     __param(0, (0, common_1.Param)('ma_he_thong_rap')),
     __metadata("design:type", Function),
@@ -45,7 +51,12 @@ __decorate([
 ], QuanLyRapController.prototype, "getLayThongTinHeThong", null);
 __decorate([
     (0, common_1.Get)('LayThongTinCumRapTheoHeThong/:ma_he_thong_rap'),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     (0, swagger_1.ApiParam)({ name: 'ma_he_thong_rap', description: 'Mã hệ thống rạp', type: Number }),
     __param(0, (0, common_1.Param)('ma_he_thong_rap')),
     __metadata("design:type", Function),
@@ -54,7 +65,12 @@ __decorate([
 ], QuanLyRapController.prototype, "getLayThongTinCumRapTheoHeThong", null);
 __decorate([
     (0, common_1.Get)('LayThongTinLichChieuHeThongRap/:ma_rap'),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     (0, swagger_1.ApiParam)({ name: 'ma_rap', description: 'Mã rạp', type: Number }),
     __param(0, (0, common_1.Param)('ma_rap')),
     __metadata("design:type", Function),
@@ -63,7 +79,12 @@ __decorate([
 ], QuanLyRapController.prototype, "getLichChieuHeThongRap", null);
 __decorate([
     (0, common_1.Get)('LayThongTinLichChieuPhim/:ma_phim'),
-    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     (0, swagger_1.ApiParam)({ name: 'ma_phim', description: 'Mã phim', type: Number }),
     __param(0, (0, common_1.Param)('ma_phim')),
     __metadata("design:type", Function),

@@ -63,6 +63,26 @@ let AuthService = class AuthService {
             refreshToken: refreshToken,
         };
     }
+    async register(req) {
+        const { full_name, email, pass_word } = req.body;
+        console.log({ full_name, email, pass_word });
+        const userExists = await this.prisma.users.findFirst({
+            where: { email: email },
+        });
+        if (userExists) {
+            throw new common_1.BadRequestException(`Tài khoản đã tồn tại, Vui lòng đăng nhập`);
+        }
+        const passHash = bcrypt.hashSync(pass_word, 10);
+        const userNew = await this.prisma.users.create({
+            data: {
+                email: email,
+                full_name: full_name,
+                pass_word: passHash,
+            },
+        });
+        const { pass_word: _, ...userWithoutPassword } = userNew;
+        return userWithoutPassword;
+    }
 };
 exports.AuthService = AuthService;
 exports.AuthService = AuthService = __decorate([

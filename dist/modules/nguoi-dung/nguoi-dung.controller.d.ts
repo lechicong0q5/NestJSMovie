@@ -10,8 +10,8 @@ export declare class NguoiDungController {
             created_at: Date | null;
             updated_at: Date | null;
             name: string;
-            is_active: boolean | null;
             description: string | null;
+            is_active: boolean | null;
         }[];
     }>;
     getListUser(query: any, req: Request): Promise<{
@@ -46,7 +46,7 @@ export declare class NguoiDungController {
             updated_at: Date | null;
         }[];
     }>;
-    FindUserDetail(param: any, id: string, headers: any, req: Request): Promise<{
+    FindUserDetail(id: string, headers: any, req: Request): Promise<{
         email: string;
         pass_word: string;
         user_id: number;

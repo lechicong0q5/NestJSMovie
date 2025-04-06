@@ -7,4 +7,15 @@ export declare class AuthController {
         accessToken: string;
         refreshToken: string;
     }>;
+    register(createUserDto: CreateUserDto): Promise<{
+        email: string;
+        user_id: number;
+        full_name: string;
+        avatar: string | null;
+        google_id: string | null;
+        face_app_id: string | null;
+        role_id: number | null;
+        created_at: Date | null;
+        updated_at: Date | null;
+    }>;
 }
