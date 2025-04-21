@@ -7,25 +7,25 @@ export declare class NguoiDungService {
     getListTypeUser(req: any, query: any): Promise<{
         items: {
             role_id: number;
-            created_at: Date | null;
-            updated_at: Date | null;
             name: string;
             description: string | null;
             is_active: boolean | null;
+            created_at: Date | null;
+            updated_at: Date | null;
         }[];
     }>;
-    getListUser(req: any, query: any): Promise<{
+    getListUser(req: any, tu_khoa: string): Promise<{
         items: {
+            role_id: number | null;
+            created_at: Date | null;
+            updated_at: Date | null;
+            user_id: number;
             email: string;
             pass_word: string;
-            user_id: number;
             full_name: string;
             avatar: string | null;
             google_id: string | null;
             face_app_id: string | null;
-            role_id: number | null;
-            created_at: Date | null;
-            updated_at: Date | null;
         }[];
     }>;
     getUserPage(req: any, query: any): Promise<{
@@ -34,29 +34,29 @@ export declare class NguoiDungService {
         totalPage: number;
         totalItem: number;
         items: {
+            role_id: number | null;
+            created_at: Date | null;
+            updated_at: Date | null;
+            user_id: number;
             email: string;
             pass_word: string;
-            user_id: number;
             full_name: string;
             avatar: string | null;
             google_id: string | null;
             face_app_id: string | null;
-            role_id: number | null;
-            created_at: Date | null;
-            updated_at: Date | null;
         }[];
     }>;
     FindUserDetail(id: string, req: any): Promise<{
+        role_id: number | null;
+        created_at: Date | null;
+        updated_at: Date | null;
+        user_id: number;
         email: string;
         pass_word: string;
-        user_id: number;
         full_name: string;
         avatar: string | null;
         google_id: string | null;
         face_app_id: string | null;
-        role_id: number | null;
-        created_at: Date | null;
-        updated_at: Date | null;
     } | null>;
     FindUserDetailPage(id: string, query: any, req: any): Promise<{
         page: any;
@@ -64,46 +64,46 @@ export declare class NguoiDungService {
         totalPage: number;
         totalItem: number;
         items: {
+            role_id: number | null;
+            created_at: Date | null;
+            updated_at: Date | null;
+            user_id: number;
             email: string;
             pass_word: string;
-            user_id: number;
             full_name: string;
             avatar: string | null;
             google_id: string | null;
             face_app_id: string | null;
-            role_id: number | null;
-            created_at: Date | null;
-            updated_at: Date | null;
         }[];
     }>;
     createUser(createNguoiDungDto: CreateNguoiDungDto, req: any): Promise<{
         message: string;
         user: {
+            role_id: number | null;
+            created_at: Date | null;
+            updated_at: Date | null;
+            user_id: number;
             email: string;
             pass_word: string;
-            user_id: number;
             full_name: string;
             avatar: string | null;
             google_id: string | null;
             face_app_id: string | null;
-            role_id: number | null;
-            created_at: Date | null;
-            updated_at: Date | null;
         };
     }>;
     updateUser(updateNguoiDungDto: UpdateNguoiDungDto, req: any): Promise<{
         message: string;
         user: {
+            role_id: number | null;
+            created_at: Date | null;
+            updated_at: Date | null;
+            user_id: number;
             email: string;
             pass_word: string;
-            user_id: number;
             full_name: string;
             avatar: string | null;
             google_id: string | null;
             face_app_id: string | null;
-            role_id: number | null;
-            created_at: Date | null;
-            updated_at: Date | null;
         };
     }>;
     deleteUser(userId: number): Promise<{

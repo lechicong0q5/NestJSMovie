@@ -23,11 +23,19 @@ let NguoiDungService = class NguoiDungService {
             items: ListUserType || [],
         };
     }
-    async getListUser(req, query) {
-        console.log({ user: req.user });
-        const ListUser = await this.prisma.users.findMany();
+    async getListUser(req, tu_khoa) {
+        console.log({ user: req.user, tu_khoa });
+        const listUser = await this.prisma.users.findMany({
+            where: tu_khoa
+                ? {
+                    full_name: {
+                        contains: tu_khoa.toLowerCase(),
+                    },
+                }
+                : undefined,
+        });
         return {
-            items: ListUser || [],
+            items: listUser || [],
         };
     }
     async getUserPage(req, query) {

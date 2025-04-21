@@ -18,15 +18,25 @@ export class QuanLyPhimService {
     };
   }
 
-  async getListMovie(req: any, query: any) {
+  async getListMovie(req: any, ten_phim: string) {
     console.log({ user: req.user });
-    
-    const ListVe = await this.prisma.phim.findMany();
+
+    const listPhim = await this.prisma.phim.findMany({
+      where: ten_phim
+        ? {
+            ten_phim: {
+              contains: ten_phim.toLowerCase(),
+            },
+          }
+        : undefined,
+    });
 
     return {
-      items: ListVe || [],
+      items: listPhim || [],
     };
   }
+  
+  
 
   async getMoviePage(req: any, query: any) {
     console.log({ user: req.user });

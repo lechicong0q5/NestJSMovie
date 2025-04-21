@@ -28,9 +28,13 @@ export class NguoiDungController {
     description: 'Nhập token trực tiếp vào header: api-header-token',
     required: true,
   })
-  async getListUser(@Query() query: any, @Req() req: Request) {
-    return await this.nguoiDungService.getListUser(req, query);
+  async getListUser(
+    @Query('tu_khoa') tu_khoa: string,
+    @Req() req: Request,
+  ) {
+    return await this.nguoiDungService.getListUser(req, tu_khoa);
   }
+  
 
   @Get('LayDanhSachLoaiNguoiDungPhanTrang')
   @UseGuards(ApiHeaderTokenGuard)

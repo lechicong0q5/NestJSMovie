@@ -30,8 +30,8 @@ let QuanLyPhimController = class QuanLyPhimController {
         const result = await this.quanLyPhimService.getListBanner(req, query);
         return result;
     }
-    async getListPhim(query, req) {
-        const result = await this.quanLyPhimService.getListMovie(req, query);
+    async getListPhim(ten_phim, req) {
+        const result = await this.quanLyPhimService.getListMovie(req, ten_phim);
         return result;
     }
     async getListVideo(query, page, pageSize, req) {
@@ -72,12 +72,16 @@ __decorate([
 ], QuanLyPhimController.prototype, "getListDatVe", null);
 __decorate([
     (0, common_1.Get)('LayDanhSachPhim'),
-    (0, swagger_1.ApiHeader)({ name: 'api-header-token', description: 'Nhập token trực tiếp vào header: api-header-token', required: true }),
+    (0, swagger_1.ApiHeader)({
+        name: 'api-header-token',
+        description: 'Nhập token trực tiếp vào header: api-header-token',
+        required: true,
+    }),
     (0, common_1.UseGuards)(api_header_token_guard_1.ApiHeaderTokenGuard),
-    __param(0, (0, common_1.Query)()),
+    __param(0, (0, common_1.Query)('ten_phim')),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], QuanLyPhimController.prototype, "getListPhim", null);
 __decorate([

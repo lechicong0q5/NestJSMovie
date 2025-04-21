@@ -23,11 +23,19 @@ let QuanLyPhimService = class QuanLyPhimService {
             items: ListBanner || [],
         };
     }
-    async getListMovie(req, query) {
+    async getListMovie(req, ten_phim) {
         console.log({ user: req.user });
-        const ListVe = await this.prisma.phim.findMany();
+        const listPhim = await this.prisma.phim.findMany({
+            where: ten_phim
+                ? {
+                    ten_phim: {
+                        contains: ten_phim.toLowerCase(),
+                    },
+                }
+                : undefined,
+        });
         return {
-            items: ListVe || [],
+            items: listPhim || [],
         };
     }
     async getMoviePage(req, query) {

@@ -26,8 +26,8 @@ let NguoiDungController = class NguoiDungController {
     async getListTypeUser(query, req) {
         return await this.nguoiDungService.getListTypeUser(req, query);
     }
-    async getListUser(query, req) {
-        return await this.nguoiDungService.getListUser(req, query);
+    async getListUser(tu_khoa, req) {
+        return await this.nguoiDungService.getListUser(req, tu_khoa);
     }
     async getListVideo(query, page, pageSize, req) {
         return await this.nguoiDungService.getUserPage(req, query);
@@ -73,10 +73,10 @@ __decorate([
         description: 'Nhập token trực tiếp vào header: api-header-token',
         required: true,
     }),
-    __param(0, (0, common_1.Query)()),
+    __param(0, (0, common_1.Query)('tu_khoa')),
     __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Request]),
+    __metadata("design:paramtypes", [String, Request]),
     __metadata("design:returntype", Promise)
 ], NguoiDungController.prototype, "getListUser", null);
 __decorate([

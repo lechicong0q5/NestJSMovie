@@ -5,17 +5,17 @@ export declare class QuanLyPhimService {
     constructor(prisma: PrismaService);
     getListBanner(req: any, query: any): Promise<{
         items: {
+            ma_banner: number;
             ma_phim: number;
             hinh_anh: string | null;
-            ma_banner: number;
         }[];
     }>;
-    getListMovie(req: any, query: any): Promise<{
+    getListMovie(req: any, ten_phim: string): Promise<{
         items: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -31,9 +31,9 @@ export declare class QuanLyPhimService {
         totalItem: number;
         items: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -47,9 +47,9 @@ export declare class QuanLyPhimService {
         total: number;
         items: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -63,9 +63,9 @@ export declare class QuanLyPhimService {
         message: string;
         data: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -78,9 +78,9 @@ export declare class QuanLyPhimService {
         message: string;
         data: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -93,9 +93,9 @@ export declare class QuanLyPhimService {
         message: string;
         phim: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;
@@ -107,9 +107,9 @@ export declare class QuanLyPhimService {
     getListMovieInfor(req: any, query: any): Promise<{
         items: {
             ma_phim: number;
+            hinh_anh: string | null;
             ten_phim: string;
             trailer: string | null;
-            hinh_anh: string | null;
             mo_ta: string | null;
             ngay_khoi_chieu: Date | null;
             danh_gia: number | null;

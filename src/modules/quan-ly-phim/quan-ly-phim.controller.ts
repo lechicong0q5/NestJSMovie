@@ -8,7 +8,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import uploadLocal from 'src/common/multer/local.multer';
 import { FileUploadDto } from './dto/file-upload.dto';
 import { CreatePhimDto } from './dto/create-phim.dto';
-import { Request } from 'express';
+import { query, Request } from 'express';
 import { ApiHeaderTokenGuard } from '../auth/test/api-header-token.guard';
 
 @ApiTags('QuanLyPhim')
@@ -29,16 +29,20 @@ export class QuanLyPhimController {
   }
 
   @Get('LayDanhSachPhim')
-  @ApiHeader({ name: 'api-header-token', description: 'Nhập token trực tiếp vào header: api-header-token', required: true })
+  @ApiHeader({
+    name: 'api-header-token',
+    description: 'Nhập token trực tiếp vào header: api-header-token',
+    required: true,
+  })
   @UseGuards(ApiHeaderTokenGuard)
   async getListPhim(
-    @Query() query: any,
+    @Query('ten_phim') ten_phim: string,
     @Req() req: Request,
   ) {
-    const result = await this.quanLyPhimService.getListMovie(req, query);
+    const result = await this.quanLyPhimService.getListMovie(req, ten_phim);
     return result;
   }
-
+  
   @Get('LayDanhSachLoaiNguoiDungPhanTrang')
   @ApiHeader({ name: 'api-header-token', description: 'Nhập token trực tiếp vào header: api-header-token', required: true })
   @UseGuards(ApiHeaderTokenGuard)
